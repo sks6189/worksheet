@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Todolist</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        .pt30{padding-top:30px;}
+        .del{text-decoration-line: line-through}
+    </style>
+
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+           $('.list-group a').on('mouseover',function(){
+               if($(this).data('toggle')){
+                  $(this).addClass('active').siblings().removeClass('active');
+               }
+           });
+
+
+        });
+    </script>
+</head>
+<body>
+<div class="container pt30">
+    <div class="panel">
+        <h2>REACT TODO LIST</h2>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            todolist
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div class="col-md-11">
+                    <div class="input-group">
+                        <div class="input-group-addon">할일 등록</div>
+                        <input type="text" class="form-control" value="" placeholder="내용을 입력해주세요" />
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-primary">등록</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="list-group">
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#detail-modal">
+                    <p class="list-group-item-heading">등록글 1</p>
+                </a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#detail-modal">
+                    <p class="list-group-item-heading">등록글 2</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-danger">
+                    <p class="list-group-item-heading">등록글 3</p>
+                </a>
+                <a href="#" class="list-group-item" data-toggle="modal" data-target="#detail-modal">
+                    <p class="list-group-item-heading">등록글 4</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="detail-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">정보 수정</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline" id="">
+                    <!-- input 텍스트 -->
+                    <div class="input-group col-md-12">
+                        <div class="input-group-addon">내용</div>
+                        <input class="form-control" value="" placeholder="내용을 입력해주세요"/>
+                    </div>
+                    <!--// input 텍스트 -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary">수정</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
+</html>
